@@ -1,8 +1,8 @@
-describe "Main" do
+describe "WorkDaysPerSalary" do
   context '2024年5月' do
     let(:amount) { 600_000 }
     let(:date) { Date.new(2024, 5, 1) }
-    let(:main) { Main.new(date: date, amount: amount) }
+    let(:main) { WorkDaysPerSalary.new(date: date, amount: amount) }
 
     it '平日が21日あること' do
       expect(main.workdays).to eq 21
@@ -19,7 +19,7 @@ describe "Main" do
   context '2024年6月' do
     let(:amount) { 600_000 }
     let(:date) { Date.new(2024, 6, 1) }
-    let(:main) { Main.new(date: date, amount: amount) }
+    let(:main) { WorkDaysPerSalary.new(date: date, amount: amount) }
 
     it '平日が22日あること' do
       expect(main.workdays).to eq 20

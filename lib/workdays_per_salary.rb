@@ -1,7 +1,7 @@
 require 'holiday_japan'
 require 'active_support/all'
 
-class Main
+class WorkDaysPerSalary
   attr_reader :target_date, :amount
 
   # 対象の年月, 月あたりの受け取り報酬額
