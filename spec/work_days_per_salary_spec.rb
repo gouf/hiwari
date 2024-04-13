@@ -21,7 +21,7 @@ describe "WorkDaysPerSalary" do
     let(:date) { Date.new(2024, 6, 1) }
     let(:main) { WorkDaysPerSalary.new(date: date, amount: amount) }
 
-    it '平日が22日あること' do
+    it '平日が20日あること' do
       expect(main.workdays).to eq 20
     end
 
