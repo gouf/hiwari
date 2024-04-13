@@ -3,3 +3,4 @@
 source "https://rubygems.org"
 
 gem 'holiday_japan'
+gem 'activesupport'
