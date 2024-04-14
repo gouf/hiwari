@@ -2,7 +2,7 @@
 function work_day_per_salary {
   currentDir=$(pwd)
   projectDir="$HOME/hiwari" # hiwari があるディレクトリを指定
-  targetYear=2024 # 今年の年数を指定
+  targetYear=$(date +%Y) # 今年の年数
   targetMonth=$1 # コマンドで渡す対象の月数
   amount="600_000" # 税抜き報酬額を指定
   requireRelative="require_relative 'lib/work_days_per_salary'"
