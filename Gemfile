@@ -6,5 +6,6 @@ ruby '>= 3.3.0'
 
 gem 'holiday_japan'
 gem 'activesupport'
+gem 'actionview'
 gem 'rspec'
 gem 'fuubar'
