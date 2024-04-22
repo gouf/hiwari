@@ -6,11 +6,12 @@ function work_day_per_salary {
   targetMonth=$1 # コマンドで渡す対象の月数
   amount="600_000" # 税抜き報酬額を指定
   requireRelative="require_relative 'lib/work_days_per_salary'"
-  salaryPerDay="WorkDaysPerSalary.new(date: Date.new($targetYear, ARGV[0].to_i, 1), amount: $amount).salary_per_day"
+  requireAndIncludeHelper="require 'action_view/helpers'; include ActionView::Helpers" # gem install actionview
+  workdays="WorkDaysPerSalary.new(year: $targetYear, month: ARGV[0].to_i, amount: $amount).workdays"
+  salaryPerDay="WorkDaysPerSalary.new(year: $targetYear, month: ARGV[0].to_i, amount: $amount).salary_per_day"
 
   cd "$projectDir"
-  # NOTE: 年数固定なので、時間経過に応じて年数を更新する必要がある
-  bundle e ruby -e "$requireRelative; puts $salaryPerDay" $targetMonth
+  bundle e ruby -e "$requireRelative; $requireAndIncludeHelper; puts \"営業日: #{$workdays}日\"; puts \"日割り額: #{number_with_delimiter($salaryPerDay)}円\"" $targetMonth
 
   cd "$currentDir"
 }
