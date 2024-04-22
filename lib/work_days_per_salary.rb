@@ -5,8 +5,8 @@ class WorkDaysPerSalary
   attr_reader :target_date, :amount
 
   # 対象の年月, 月あたりの受け取り報酬額
-  def initialize(date:, amount:)
-    @target_date = date
+  def initialize(year:, month:, amount:)
+    @target_date = Date.new(year, month, 1)
     @amount = amount
   end
 
